@@ -1,0 +1,197 @@
+.cardFrontside {
+    width: 500px;
+    height: 270px;
+    background: url(../../../assets/images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    animation-fill-mode: forwards;
+    animation: cardSideStart;
+    animation-duration: 0.7s;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 30px;
+        left: 30px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: #fff;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 40px;
+        left: 80px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #fff;
+        opacity: 0;
+        border-radius: 100%;
+        animation: cardCircleStart forwards;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+    }
+
+    .cardNumberContainer {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0;
+        animation: cardNumberStart forwards;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+    }
+
+    .cardNumber {
+        color: #fff;
+        font-weight: 500;
+        font-size: 26px;
+        letter-spacing: 0.2em;
+        width: 100%;
+    }
+
+    .toggleVisible {
+        background: transparent;
+        border: none;
+
+        svg {
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .cardBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        color: #fff;
+
+        .cardHolderName {
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            animation: cardHolderNameStart forwards;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        .cardEndDate {
+            opacity: 0;
+            animation: cardEndDateStart forwards;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+        }
+    }
+}
+
+
+.cardBackside {
+    width: 500px;
+    height: 270px;
+    background: url(../../../assets/images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 60px;
+    position: relative;
+    margin: 50px 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 55px;
+    animation-fill-mode: forwards;
+    animation: cardSideStart;
+    animation-duration: 0.5s;
+
+    .cardCVCContainer {
+        position: relative;
+    }
+
+    .cardCVCCode {
+        color: #fff;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .toggleVisible {
+        position: absolute;
+        top: 0;
+        right: -50px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        svg {
+            color: #000;
+        }
+    }
+}
+
+
+@keyframes cardSideStart {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cardCircleStart {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cardHolderNameStart {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cardEndDateStart {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cardNumberStart {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
